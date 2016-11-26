@@ -50,24 +50,47 @@
            {% for key in data %}
               <tr>
                   <td>{{ key.name }}</td>
-                  <td>{{ key.addy }}</td>
-                  <td>{{ key.city }}</td>
-                  <td>{{ key.phone }}</td>
-                  <td>{{ key.web }}</td>
+                  <td>{{ key.addy.0 }}</td>
+                  <td>{{ key.city.0 }}</td>
+                  <td>{{ key.phone.0 }}</td>
+                  <td><a href="http://{{ key.web.0 }}" target="_blank">{{ key.web.0 }} </a></td>
               </tr>
           {% endfor %}
        
          
           
           </tbody>
-          </table>          
-  
+          </table>  
+          
+                    <table class="table table-bordered table-hover table-striped tablesorter">
+              <thead>
+              <tr>
+                <th class="header" width="10%"> Inspection Date <i class="icon-sort"></i></th>
+                <th class="header"> Inspection Violation <i class="icon-sort"></i></th>
+                <th class="header"> Grade <i class="icon-sort"></i></th>
+              </tr>
+          </thead>
+          <tbody>
+           {% for key in data2 %}
+              <tr>
+                  <td>{{ key.inspection_date|truncatechars:13 }}</td>
+                  <td>{{ key.violation_description|wordwrap:30  }}</td>
+                  <td>{{ key.grade }}</td>
+              </tr>
+          {% endfor %}
+       
+         
+          
+          </tbody>
+          </table>           
+          <!-- 
           <div class="list-group">
   				{% for another in data2 %}
                   <a href="#" class="list-group-item">{{ another.inspection_date|truncatechars:13  }}  {{ another.violation_description|wordwrap:30  }}</a>
                 {% endfor %}
 
           </div>
+          -->
       </div> 
 
     </div>
