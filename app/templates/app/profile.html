@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<h1 class="text-center"> NYC Restaurants </h1>
+<h3 class="text-center">Copy & Paste Yelp URL of NYC Restaurant</h2>
+  <div class="input">
+      <style>
+        .form-signin {
+          max-width: 650px;
+          padding: 15px;
+          margin: 0 auto;
+        }    
+      </style>
+
+
+      <div class="container text-center">
+          <form class="form-signin" id="login_form" method="post" action="/app/profile/">
+            
+            {% csrf_token %}
+            
+
+            <br>
+            <input type="text" name="restaurant" class="form-control"  value="" required autofocus>
+            <br>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Get Data</button>
+          </form>
+      </div>
+      <div class="table-responsive">
+          <table class="table table-bordered table-hover table-striped tablesorter">
+              <thead>
+              <tr>
+                <th class="header"> Restaurant <i class="icon-sort"></i></th>
+                <th class="header"> Address <i class="icon-sort"></i></th>
+                <th class="header"> City <i class="icon-sort"></i></th>
+                <th class="header"> Price <i class="icon-sort"></i></th>
+                <th class="header"> Website <i class="icon-sort"></i></th>
+              </tr>
+          </thead>
+          <tbody>
+           {% for key in data %}
+              <tr>
+                  <td>{{ key.name }}</td>
+                  <td>{{ key.addy }}</td>
+                  <td>{{ key.city }}</td>
+                  <td>{{ key.phone }}</td>
+                  <td>{{ key.web }}</td>
+              </tr>
+          {% endfor %}
+       
+         
+          
+          </tbody>
+          </table>          
+  
+          <div class="list-group">
+  				{% for another in data2 %}
+                  <a href="#" class="list-group-item">{{ another.inspection_date|truncatechars:13  }}  {{ another.violation_description|wordwrap:30  }}</a>
+                {% endfor %}
+
+          </div>
+      </div> 
+
+    </div>
+</body>
+</html>
