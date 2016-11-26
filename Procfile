@@ -1,0 +1,1 @@
+web: gunicorn nyc.wsgi --log-file -
