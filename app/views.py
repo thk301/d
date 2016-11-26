@@ -1,8 +1,8 @@
 from django.shortcuts import render, HttpResponse
 from lxml import html
 import requests
-import re
-import pandas as pd
+#import re
+#import pandas as pd
 import urllib2, json
 import simplejson
 
