@@ -8,13 +8,10 @@ import simplejson
 
 # Create your views here.
 
+#def index(request):
+#    return HttpResponse('Hello World!')
+
 def index(request):
-    return HttpResponse('Hello World!')
-
-def test(request):
-    return HttpResponse('My second view!')
-
-def profile(request):
     parsedData = []
     parsedData2 =[]
     if request.method == 'POST':
