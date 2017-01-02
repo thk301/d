@@ -29,7 +29,7 @@ SECRET_KEY = 'h_-=^h!f3p^4bwv-jt@zxqp(x7sio778*k!)i7o%m_52qik6&('
 
 
 #ALLOWED_HOSTS = ['.herokuapp.com','.plot.nyc']
-DEBUG = True
+DEBUG = False
 ALLOWED_HOSTS = [".herokuapp.com/","www.plot.nyc",]
 # Application definition
 
