@@ -25,12 +25,12 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'h_-=^h!f3p^4bwv-jt@zxqp(x7sio778*k!)i7o%m_52qik6&('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+#DEBUG = False
 
 
-ALLOWED_HOSTS = ['.herokuapp.com','.plot.nyc']
-
-
+#ALLOWED_HOSTS = ['.herokuapp.com','.plot.nyc']
+DEBUG = True
+ALLOWED_HOSTS = [".herokuapp.com",".plot.nyc"]
 # Application definition
 
 INSTALLED_APPS = [
