@@ -28,7 +28,7 @@ def index(request):
         city_finder = tree.xpath('//span[@itemprop="addressLocality"]/text()')
         price_finder = tree.xpath('//span[@class="bullet-after"]/span[@class="business-attribute price-range"]/text()')
         phone_finder = tree.xpath('//span[@itemprop="telephone"]/text()')
-        phone_finder =  str(phone_finder[0]).strip()
+        phone_finder =  str(phone_finder.first()).strip()
         phone_lookup = phone_finder.replace(" ","").replace("-","").replace('(',"").replace(")","")
         web_finder = tree.xpath('//span[@class="biz-website js-add-url-tagging"]/a[@href]/text()')
        
